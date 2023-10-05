@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../public/css/login.css">
+  <!-- Background -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <title>Contact Manager</title>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  <div class="container">
+    <h1>Login</h1>
+    <form class="form" action="/login" , method="POST">
+      <input type="text" class="field" placeholder="Email" autocomplete="off" name="loginEmail" required />
+      <div class="password-field">
+        <input type="password" class="field password-input" placeholder="Password" autocomplete="off"
+          name="loginPassword" required />
+        <i class="bx bxs-lock-alt"></i>
+      </div>
+      <p class="error-message">Incorrect email address or password</p>
+      <p>
+        Don't have an account?
+        <a href="http://localhost:3000/register">Register here</a>
+      </p>
+      <input type="submit" class="submit" name="submit-login" />
+    </form>
+  </div>
+  <p class="copyright">
+    Copyright &copy <span></span>
+    <a href="https://github.com/sergiuchelemen" target="_blank">@sergiuchelemen</a>. All rights reserved.
+  </p>
+
+</body>
+<script src="../public/js/login.js"></script>
+
+</html>

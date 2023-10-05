@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/add.css">
+    <!-- Background -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <title>Contact Manager</title>
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <div class="container">
+        <h1>Add a new contact</h1>
+        <form action="/user" method="POST">
+            <input type="text" placeholder="First Name" autocomplete="off" name="firstname" required>
+            <input type="text" placeholder="Last Name" autocomplete="off" name="lastname" required>
+            <input type="text" placeholder="Email" autocomplete="off" name="email" required>
+            <input type="number" placeholder="Phone" autocomplete="off" name="phone" required>
+            <button type="submit" id="add-button">Add</button>
+        </form>
+    </div>
+</body>
+<script src="particles.js"></script>
+<script src="../public/js/add.js"></script>
+
+</html>

@@ -1,0 +1,138 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* general settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* variables */
+:root{
+    --primary-color: rgb(249, 158, 0);
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(../assets/ethan-hoover-eIVJAkj1uCs-unsplash.jpg);
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 700px;
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    gap: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+h1 {
+    color: #fff;
+    top: 1.5rem;
+    font-size: 3rem;
+}
+
+.field {
+    display: block;
+    width: 70%;
+    background-color: transparent;
+    color: #fff;
+    height: 40px;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    font-size: 1.2rem;
+}
+
+.field:focus {
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.field::placeholder {
+    font-size: 1.2rem;
+}
+
+.password-field {
+    position: relative;
+    display: inline-block;
+    width: 70%;
+}
+
+.password-input {
+    width: 100%;
+    background-image: url('icon.png');
+}
+
+form p {
+    margin-top: 1rem;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+}
+
+form a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.submit {
+    width: 130px;
+    height: 45px;
+    border-radius: 2rem;
+    border: 0;
+    margin-top: 2rem;
+}
+
+.submit:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.bxs-lock-alt {
+    display: inline;
+    color: var(--primary-color);
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+}
+
+.copyright {
+    color: #fff;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+}
+
+.copyright a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.error-message{
+    display: none;
+}
+
+

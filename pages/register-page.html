@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../public/css/register.css" />
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <title>Contact Manager</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Register</h1>
+    <form class="form" action="/register">
+      <input type="text" class="field" placeholder="Name" autocomplete="off" name="name" required />
+      <input type="text" class="field" placeholder="Email" autocomplete="off" name="email" required />
+      <div class="password-field">
+        <input type="password" class="field password-input" placeholder="Password" autocomplete="off" name="password"
+          required />
+        <i class="bx bxs-lock-alt"></i>
+      </div>
+      <p class="error-message">This email is already in use.</p>
+      <p>
+        Already have an account?
+        <a href="http://localhost:3000/login">Login here</a>
+      </p>
+      <input type="submit" class="submit" name="submit-register" />
+    </form>
+  </div>
+  <p class="copyright">
+    Copyright &copy <span></span>
+    <a href="https://github.com/sergiuchelemen" target="_blank">@sergiuchelemen</a>. All rights reserved.
+  </p>
+</body>
+<script src="../public/js/register.js"></script>
+
+</html>
