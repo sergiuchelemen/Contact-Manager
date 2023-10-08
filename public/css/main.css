@@ -14,6 +14,10 @@
     --primary-color: rgb(249, 158, 0);
 }
 
+body{
+    background-color: #0F0F0F;
+}
+
 .top-container{
     display: flex;
     flex-direction: column;
@@ -26,11 +30,12 @@
 .search-bar{
     width: 300px;
     height: 50px;
+    border: none;
     border-radius: 2rem;
-    border-color: rgb(108, 106, 104);
-    border-width: 1px;
     font-size: 18px;
     padding: 1rem;
+    background-color: #262626;
+    color: #fff;
 }
 
 .search-bar::placeholder{
@@ -55,10 +60,19 @@
     border-radius: 1rem;
     width: 520px;
     padding: 1rem;
+    background-color: #262626;
 }
 
 .contact-item-remove {
     display: none;
+}
+
+h4{
+    color: gray;
+}
+
+p{
+    color: #e8e8e8;
 }
 
 .buttons{
@@ -68,13 +82,23 @@
     gap: 1rem;
 }
 
-#add,
-.delete-button,
-.edit-button {
+#add {
     width: 130px;
     height: 45px;
     border-radius: 2rem;
     border: 0;
+    background-color: #262626;
+    color: #fff;
+}
+
+.delete-button, 
+.edit-button{
+    width: 130px;
+    height: 45px;
+    border-radius: 2rem;
+    border: 0;
+    background-color: #0F0F0F;
+    color: #fff;
 }
 
 #add:hover,
@@ -108,10 +132,28 @@
     }
 }
 
+@media screen and (max-width:628px) {
+    dialog[data-modal] {
+        width: 300px;
+    }
+
+
+    dialog .button button,
+    dialog #save-button {
+        width: 100px;
+        height: 35px;
+    }
+}
+
+@media screen and (max-width:360px) {
+    dialog[data-modal] {
+        width: 200px;
+    }
+}
+
 [data-modal] {
-    /* display: flex; */
     flex-direction: column;
-    width: 300px;
+    width: 500px;
     padding: 20px;
     border-radius: 8px;
     position: fixed;
@@ -120,8 +162,53 @@
     transform: translate(-50%, -50%);
 }
 
+dialog{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
 [data-modal] form{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
 }
 
+[data-modal] form input{
+    display: block;
+    width: 70%;
+    background-color: transparent;
+    color: #fff;
+    height: 40px;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    font-size: 1.2rem;
+}
+
+[data-modal] form input:focus{
+    border-bottom: 1px solid var(--primary-color);
+}
+
+dialog .button{
+    display: flex;
+    justify-content: center;
+}
+
+.button button, #save-button{
+    width: 130px;
+    height: 45px;
+    border-radius: 2rem;
+    border: 0;
+    margin-top: 1rem;
+    background-color: black;
+    color: #fff;
+}
+
+.button button:hover,
+#save-button:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+}

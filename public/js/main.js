@@ -53,7 +53,6 @@ editButtons.forEach((button) => {
 
   button.addEventListener("click", () => {
     // open modal
-    modal.classList.add = "dialog-open";
     modal.show();
     const elements = contactItem.querySelectorAll(".contact-info");
     const contactFirstName = elements[0].querySelector(":nth-child(2)");
@@ -105,7 +104,6 @@ editButtons.forEach((button) => {
             contactLastName.textContent = modifiedData.lastname;
             contactEmail.textContent = modifiedData.email;
             contactPhone.textContent = modifiedData.phone;
-            console.log("am schimbat");
           }
         })
         .catch((err) => {

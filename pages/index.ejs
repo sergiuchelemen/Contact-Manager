@@ -48,13 +48,15 @@
 
                 <dialog data-modal>
                     <form action="/user" id="edit-form">
-                        <input type="text" name="name" id="firstname">
-                        <input type="text" name="name" id="lastname">
-                        <input type="text" name="email" id="email">
-                        <input type="tel" name="phone" id="phone">
+                        <input type="text" name="name" id="firstname" autocomplete="off">
+                        <input type="text" name="name" id="lastname" autocomplete="off">
+                        <input type="text" name="email" id="email" autocomplete="off">
+                        <input type="number" name="phone" id="phone" autocomplete="off">
                         <button id="save-button">Save</button>
                     </form>
-                    <button data-close-modal>Close</button>
+                    <div class="button">
+                        <button data-close-modal>Close</button>
+                    </div>
                 </dialog>
             </div>
             <% }); %>
