@@ -65,10 +65,9 @@ router.route("/").put(async (req, res) => {
         email: data.currentData.email,
         phone: data.currentData.phone,
       },
-
       {
         firstname: data.modifiedData.firstname,
-        lastName: data.modifiedData.lastname,
+        lastname: data.modifiedData.lastname,
         email: data.modifiedData.email,
         phone: data.modifiedData.phone,
       },

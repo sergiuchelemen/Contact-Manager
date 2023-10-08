@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const timeSchema = mongoose.Schema({
+const contactSchema = mongoose.Schema({
   user_id: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
@@ -18,9 +18,9 @@ const timeSchema = mongoose.Schema({
     required: true,
   },
   phone: {
-    type: Number,
+    type: String,
     required: true,
   },
 });
 
-module.exports = mongoose.model("Contact", timeSchema);
+module.exports = mongoose.model("Contact", contactSchema);

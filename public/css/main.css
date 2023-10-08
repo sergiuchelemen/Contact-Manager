@@ -107,3 +107,21 @@
         width: 250px;
     }
 }
+
+[data-modal] {
+    /* display: flex; */
+    flex-direction: column;
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+[data-modal] form{
+    display: flex;
+    flex-direction: column;
+}
+
