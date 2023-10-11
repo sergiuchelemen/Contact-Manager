@@ -1,9 +1,10 @@
 const express = require("express");
 const path = require("path");
 const Contact = require("../models/contactModel");
+const cookieJwtAuth = require("../middlewares/cookieJwtAuth");
 const router = express.Router();
 
-router.use(require("../middlewares/cookieJwtAuth"));
+router.use(cookieJwtAuth);
 
 // get request
 router.route("/").get(async (req, res) => {
@@ -23,17 +24,21 @@ router.route("/add").post(async (req, res) => {
     const lastname = req.body.lastname;
     const email = req.body.email;
     const phone = req.body.phone;
-    await Contact.create({
+    const contact = await Contact.create({
       firstname: firstname,
       lastname: lastname,
       email: email,
       phone: phone,
       user_id: req.user.id,
     });
-    res.json({ message: "User added" });
+    if (contact) {
+      res.status(201).json({ message: "User added" });
+    } else {
+      res.status(500).json({ message: "Internal server error" });
+    }
   } catch (e) {
     console.log(e);
-    res.json({ message: "An error occured." });
+    res.status(500).json({ message: "Internal server error" });
   }
 });
 
@@ -41,15 +46,19 @@ router.route("/add").post(async (req, res) => {
 router.route("/").delete(async (req, res) => {
   try {
     const { firstname, lastname, email, phone } = req.body;
-    await Contact.deleteOne({
+    const contact = await Contact.deleteOne({
       firstname: firstname,
       lastname: lastname,
       email: email,
       phone: phone,
     });
-    res.status(200).json({ message: "User deleted" });
+    if (contact) {
+      res.status(200).json({ message: "User deleted" });
+    } else {
+      res.status(500).json({ message: "Internal server error" });
+    }
   } catch (e) {
-    res.status(400).json({ message: "An error occured" });
+    res.status(500).json({ message: "Internal server error" });
     console.log(e);
   }
 });
@@ -73,9 +82,13 @@ router.route("/").put(async (req, res) => {
       },
       { new: true }
     );
-    res.status(200).json({ message: "User modified" });
+    if (user) {
+      res.status(200).json({ message: "User modified" });
+    } else {
+      res.status(500).json({ message: "Internal server error" });
+    }
   } catch (err) {
-    res.status(400).json({ message: "Internal server error" });
+    res.status(500).json({ message: "Internal server error" });
     console.log(err);
   }
 });

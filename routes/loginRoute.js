@@ -13,8 +13,8 @@ router.route("/").get((req, res) => {
 router.route("/").post(async (req, res) => {
   const email = req.body.loginEmail;
   const password = req.body.loginPassword;
-  const user = await User.findOne({ email });
   try {
+    const user = await User.findOne({ email });
     if (user && (await bcrypt.compare(password, user.password))) {
       const token = jwt.sign(
         {
@@ -32,7 +32,7 @@ router.route("/").post(async (req, res) => {
       });
       res.status(200).json({ message: "User found" });
     } else {
-      res.status(401).json({ message: "User not found" });
+      res.status(404).json({ message: "User not found" });
     }
   } catch (err) {
     console.log(err);
@@ -40,5 +40,4 @@ router.route("/").post(async (req, res) => {
   }
 });
 
-// schelemen90@gmail.com
 module.exports = router;
