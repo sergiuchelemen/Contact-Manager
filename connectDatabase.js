@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const dbUrl = "mongodb://localhost:27017/DailyQuote";
+const dbUrl = "mongodb://localhost:27017/ContactManager";
 
 const connectDb = async () => {
   try {

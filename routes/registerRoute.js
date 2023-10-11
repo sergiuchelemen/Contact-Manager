@@ -6,7 +6,7 @@ const User = require("../models/userModel");
 
 router.route("/").get((req, res) => {
   const filePath = path.join(__dirname, "../pages/register-page.html");
-  res.statusCode(200).sendFile(filePath);
+  res.status(200).sendFile(filePath);
 });
 
 router.route("/").post(async (req, res) => {

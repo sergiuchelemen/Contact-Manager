@@ -9,7 +9,7 @@ router.use(cookieJwtAuth);
 // get request
 router.route("/").get(async (req, res) => {
   const contacts = await Contact.find({ user_id: req.user.id });
-  res.render("index", { contacts: contacts });
+  res.status(200).render("index", { contacts: contacts });
 });
 
 router.route("/add").get((req, res) => {
