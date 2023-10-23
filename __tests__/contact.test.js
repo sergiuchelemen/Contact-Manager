@@ -1,6 +1,10 @@
 const request = require("supertest");
+const dotenv = require("dotenv");
+dotenv.config();
+
+// port changed due to ports conflict
+process.env.PORT = "3001";
 const app = require("../server");
-// const cookieJwtAuth = require("../middlewares/cookieJwtAuth");
 
 jest.mock("../connectDatabase", () => jest.fn());
 
@@ -40,7 +44,6 @@ mockUpdate.mockResolvedValue(mockedContact);
 describe("POST /add", () => {
   it("should respond with a 201 status code and 'User added' message if contact is created", async () => {
     mockCreate.mockResolvedValue(mockedContact);
-
     const response = await request(app).post("/user/add").send({
       firstname: "testfirstname",
       lastname: "testlastname",

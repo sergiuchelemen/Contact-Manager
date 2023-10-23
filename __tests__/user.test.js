@@ -1,6 +1,10 @@
 const request = require("supertest");
-const app = require("../server");
+const dotenv = require("dotenv");
+dotenv.config();
 
+// port changed due to ports conflict
+process.env.PORT = "3002";
+const app = require("../server");
 jest.mock("../connectDatabase", () => jest.fn());
 
 jest.mock("bcrypt", () => ({
@@ -34,7 +38,6 @@ describe("POST /login", () => {
   mockHash.mockReturnValue("hashedPassword");
   mockSign.mockReturnValue("mockedToken");
   mockUserModel.mockResolvedValue(mockedUser);
-
   it("should respond with the 200 status code", async () => {
     const response = await request(app)
       .post("/login")

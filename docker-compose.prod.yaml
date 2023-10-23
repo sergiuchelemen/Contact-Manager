@@ -1,0 +1,5 @@
+version: "3"
+services:
+  contact-manager:
+    environment:
+      - NODE_ENV=production

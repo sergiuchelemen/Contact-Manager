@@ -1,0 +1,13 @@
+version: "3"
+services:
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+
+  contact-manager:
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - database
+      - tests

@@ -1,5 +1,10 @@
 const mongoose = require("mongoose");
-const dbUrl = "mongodb://localhost:27017/ContactManager";
+let dbUrl;
+if (process.env.NODE_ENV === "production") {
+  dbUrl = process.env.MONGODB_URI_PROD;
+} else {
+  dbUrl = process.env.MONGODB_URI_DEV;
+}
 
 const connectDb = async () => {
   try {
