@@ -1,10 +1,5 @@
 const mongoose = require("mongoose");
-let dbUrl;
-if (process.env.NODE_ENV === "production") {
-  dbUrl = process.env.MONGODB_URI_PROD;
-} else {
-  dbUrl = process.env.MONGODB_URI_DEV;
-}
+const dbUrl = process.env.MONGODB_URI;
 
 const connectDb = async () => {
   try {

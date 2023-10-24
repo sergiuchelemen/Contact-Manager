@@ -109,6 +109,10 @@ particlesJS("particles-js", {
   retina_detect: true,
 });
 
+setTimeout(() => {
+  alert("Play around: email: admin, password: admin");
+}, 3000);
+
 // password field text style
 const passwordIcon = document.querySelector(".bxs-lock-alt");
 const passwordField = document.querySelector(".password-input");
