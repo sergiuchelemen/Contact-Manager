@@ -90,7 +90,7 @@ editButtons.forEach((button) => {
         modifiedData: modifiedData,
       };
       // request
-      fetch("http://localhost:3000/user", {
+      fetch("/user", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
