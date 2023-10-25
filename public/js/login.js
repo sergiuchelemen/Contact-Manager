@@ -140,7 +140,7 @@ form.addEventListener("submit", (e) => {
   const formData = new FormData(form);
   const data = Object.fromEntries(formData);
 
-  fetch("http://localhost:3000/login", {
+  fetch("/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -150,7 +150,7 @@ form.addEventListener("submit", (e) => {
     .then((res) => res.json())
     .then((data) => {
       if (data.message === "User found") {
-        window.location.href = `http://localhost:3000/user`;
+        window.location.href = `/user`;
       } else {
         errorMessage.style.display = "block";
       }

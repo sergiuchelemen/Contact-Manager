@@ -116,7 +116,7 @@ form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const formData = new FormData(form);
   const data = Object.fromEntries(formData);
-  const request = await fetch("http://localhost:3000/user/add", {
+  const request = await fetch("/user/add", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -125,7 +125,7 @@ form.addEventListener("submit", async (event) => {
   });
   response = await request.json();
   if (response.message === "User added") {
-    window.location.href = "http://localhost:3000/user";
+    window.location.href = "/user";
   } else {
     alert(response.message);
   }

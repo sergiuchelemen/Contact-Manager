@@ -27,7 +27,7 @@ router.route("/").post(async (req, res) => {
     });
     res.status(201).json({
       message: "User created",
-      redirectTo: "http://localhost:3000/login",
+      redirectTo: "/login",
     });
   } catch (error) {
     console.log(error);

@@ -1,7 +1,7 @@
 // redirect to /add
 const addButton = document.querySelector("#add");
 addButton.addEventListener("click", () => {
-  window.location.href = "http://localhost:3000/user/add";
+  window.location.href = "/user/add";
 });
 
 // DELETE request
@@ -25,7 +25,7 @@ deleteButtons.forEach(function (button) {
     };
 
     // request
-    fetch("http://localhost:3000/user", {
+    fetch("/user", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
