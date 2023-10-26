@@ -147,3 +147,87 @@ form a {
 }
 
 
+@media screen and (max-width: 800px) {
+    .container {
+        width: 600px;
+        height: 600px;
+    }
+}
+
+@media screen and (max-width: 725px) {
+    .container {
+        width: 500px;
+        height: 600px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 400px;
+        height: 500px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .field::placeholder {
+        font-size: 1rem;
+    }
+
+    .form p {
+        font-size: 12px;
+    }
+
+    .copyright {
+        font-size: 0.7rem;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .container {
+        width: 350px;
+        height: 450px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .container {
+        width: 300px;
+        height: 360px;
+    }
+
+    .form p {
+        font-size: 10px;
+    }
+
+    .submit {
+        width: 100px;
+        height: 35px;
+        margin-top: 1.2rem;
+    }
+
+    .field::placeholder {
+        font-size: 0.8rem;
+    }
+
+    .field {
+        height: 25px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .container {
+        width: 260px;
+        height: 340px;
+    }
+
+    .copyright {
+        font-size: 0.5rem;
+    }
+
+    .container {
+        gap: 1.5rem;
+    }
+}
