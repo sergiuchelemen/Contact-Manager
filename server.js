@@ -2,7 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-const connectDb = require("./connectDatabase");
+const mongoose = require("mongoose");
 const app = express();
 
 // ejs
@@ -12,10 +12,21 @@ app.set("views", "pages");
 // environment variables configuration
 dotenv.config();
 const PORT = process.env.PORT || 3000;
-
 // database connection
+const dbUrl = process.env.MONGODB_URI;
+const connectDb = async () => {
+	try {
+		const connect = await mongoose.connect(dbUrl);
+		console.log(
+			"Connected to MongoDB ->",
+			`Host: ${connect.connection.host},`,
+			`Name: ${connect.connection.name}`
+		);
+	} catch (err) {
+		console.log("Error connecting to MongoDB: ", err);
+	}
+};
 connectDb();
-
 // parsing data and cookies middlewares
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -23,8 +34,8 @@ app.use(cookieParser());
 
 // root route
 app.get("/", (req, res) => {
-  // redirecting the root route to the /login route
-  res.redirect("/login");
+	// redirecting the root route to the /login route
+	res.redirect("/login");
 });
 
 // register route
@@ -43,7 +54,7 @@ app.use("/public/assets", express.static(__dirname + "/public/assets"));
 
 // run app
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+	console.log(`Server is running on http://localhost:${PORT}`);
 });
 
 module.exports = app;
