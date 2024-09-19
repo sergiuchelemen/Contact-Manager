@@ -110,8 +110,8 @@ particlesJS("particles-js", {
 });
 
 setTimeout(() => {
-  alert("Play around: email: admin, password: admin");
-}, 3000);
+  alert("Play around: email: admin@gmail.com, password: admin");
+}, 0);
 
 // password field text style
 const passwordIcon = document.querySelector(".bxs-lock-alt");
